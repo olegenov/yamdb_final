@@ -16,9 +16,9 @@ class MembershipInline(admin.TabularInline):
 
 
 class TitleAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'name', 'category', 'year') 
-    search_fields = ('name',) 
-    list_filter = ('category', 'genre', 'year') 
+    list_display = ('pk', 'name', 'category', 'year')
+    search_fields = ('name',)
+    list_filter = ('category', 'genre', 'year')
     empty_value_display = '-пусто-'
     inlines = [
         MembershipInline,
@@ -27,14 +27,14 @@ class TitleAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'name', 'slug') 
-    search_fields = ('name',)  
+    list_display = ('pk', 'name', 'slug')
+    search_fields = ('name',)
     empty_value_display = '-пусто-'
 
 
 class GenreAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'name', 'slug') 
-    search_fields = ('name',) 
+    list_display = ('pk', 'name', 'slug')
+    search_fields = ('name',)
     empty_value_display = '-пусто-'
 
 

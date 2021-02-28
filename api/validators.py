@@ -1,7 +1,7 @@
 import datetime
 from random import randint
 
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator
 
 
 def max_value_current_year(value):
