@@ -58,8 +58,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker pull olegenov/yamdb
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 olegenov/yamdb
+            sudo docker-compose up
   
   send_message:
     runs-on: ubuntu-latest
