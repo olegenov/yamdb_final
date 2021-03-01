@@ -13,7 +13,10 @@ router.register('email', ConfirmationCodeViewSet, basename='Token')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('redoc/', TemplateView.as_view(template_name='redoc.html'), name='redoc'),
+    path('redoc/', TemplateView.as_view(
+        template_name='redoc.html'),
+        name='redoc'
+    ),
     path('auth/token/', views.get_token, name='Token'),
     path('auth/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
