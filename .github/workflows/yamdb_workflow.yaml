@@ -59,7 +59,7 @@ jobs:
           script: |
             sudo docker pull olegenov/yamdb
             sudo docker-compose stop
-            sudo docker-compose uo
+            sudo docker-compose up
   
   send_message:
     runs-on: ubuntu-latest
