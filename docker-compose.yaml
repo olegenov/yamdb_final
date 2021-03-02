@@ -13,7 +13,6 @@ services:
     env_file:
       - ./.env
   django:
-    build: .
     image: olegenov/yamdb:latest
     depends_on:
       - db
