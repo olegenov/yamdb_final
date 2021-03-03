@@ -1,6 +1,10 @@
 name: yamdb workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
 
 jobs:
   tests:
@@ -45,13 +49,6 @@ jobs:
           push: true
           tags: olegenov/yamdb:latest
 
-on:
-  push:
-    branches:
-      - 'master'
-      - 'main'
-
-jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
