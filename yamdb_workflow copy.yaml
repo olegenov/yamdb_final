@@ -23,7 +23,7 @@ jobs:
       run: flake8 .
 
     - name: Test with pytest
-      run: pytest tests.py
+      run: pytest
       
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
@@ -46,11 +46,6 @@ jobs:
           tags: olegenov/yamdb:latest
           
   deploy:
-    on:
-      push:
-        branches:
-          - 'main'
-          - 'master'
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
