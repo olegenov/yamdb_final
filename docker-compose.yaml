@@ -3,6 +3,7 @@ version: '2.2'
 volumes:
   postgres_data:
   static:
+  media:
   nginx_conf:
 
 services:
