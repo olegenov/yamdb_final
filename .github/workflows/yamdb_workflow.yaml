@@ -58,6 +58,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo docker pull olegenov/yamdb
+            cd yamdb_final
             sudo docker-compose up
   
   send_message:
