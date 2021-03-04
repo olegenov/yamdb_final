@@ -1,2 +1,2 @@
 FROM nginx
-COPY code/static /usr/share/nginx/html
+COPY yamdb_final/static /usr/share/nginx/html
