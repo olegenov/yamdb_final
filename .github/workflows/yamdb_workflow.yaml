@@ -57,16 +57,12 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd yamdb_final
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb:latest
             id=$(docker create ${{ secrets.DOCKER_USERNAME }}/yamdb:latest)
             sudo docker cp $id:code/docker-compose.yaml docker-compose.yaml
             sudo mkdir nginx
             sudo docker cp $id:code/nginx/Dockerfile nginx/Dockerfile
             sudo docker cp $id:code/nginx/nginx.conf nginx/nginx.conf
-            sudo docker rm -v $id
-            docker kill $(docker ps -q)
-            docker rm $(docker ps -a -q)
             sudo docker-compose up -d --force-recreate
   
   send_message:
