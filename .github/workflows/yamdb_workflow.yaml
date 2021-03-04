@@ -62,6 +62,7 @@ jobs:
             sudo docker cp $id:code/docker-compose.yaml docker-compose.yaml
             sudo mkdir nginx
             sudo docker cp $id:code/nginx/nginx.conf nginx/nginx.conf
+            sudo docker cp $id:code/nginx/Dockerfile nginx/Dockerfile
             docker kill $(docker ps -q)
             sudo docker-compose up -d --force-recreate
   
