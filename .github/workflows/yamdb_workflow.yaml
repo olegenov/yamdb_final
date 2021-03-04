@@ -57,6 +57,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            sudo docker kill $(docker ps -q)
             sudo docker pull olegenov/yamdb
             cd yamdb_final
             sudo docker-compose up
