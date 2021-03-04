@@ -23,7 +23,7 @@ services:
     volumes:
       - media:/code/media
       - static:/code/static
-      - nginx_conf:/code/nginx/
+      - ngix_conf:/code/nginx/
     entrypoint: /code/entrypoint.sh
   nginx:
     image: nginx:1.19.0-alpine
