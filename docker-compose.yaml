@@ -25,7 +25,10 @@ services:
       - static:/code/static
     entrypoint: /code/entrypoint.sh
   nginx:
-    image: nginx:1.19.0-alpine
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
     ports:
       - "80:80"
     volumes:
