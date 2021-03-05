@@ -25,7 +25,7 @@ services:
       - static:/code/static
     entrypoint: /code/entrypoint.sh
   nginx:
-    image: nginx:alphine
+    image: nginx:latest
     ports:
       - "80:80"
     volumes:
