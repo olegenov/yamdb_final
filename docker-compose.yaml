@@ -24,13 +24,13 @@ services:
       - media:/code/media
       - static:/code/static
     entrypoint: /code/entrypoint.sh
-   nginx:
-     image: nginx:1.19.0-alpine
-     ports:
-       - "80:80"
-     volumes:
-       - media:/code/media
-       - static:/code/static
-     depends_on:
-       - django
-     restart: always
+  nginx:
+    image: nginx:1.19.0-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - media:/code/media
+      - static:/code/static
+    depends_on:
+      - django
+    restart: always
