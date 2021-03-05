@@ -58,6 +58,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb
+            sudo docker-compose down
             sudo docker-compose up
   
   send_message:
