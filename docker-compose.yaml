@@ -26,7 +26,7 @@ services:
       - nginx_conf:/code/nginx
     entrypoint: /code/entrypoint.sh
   nginx:
-    build: ./nginx
+    image: nginx:1.19.0-alpine
     ports:
       - "127.0.0.1:8080:80"
     volumes:
