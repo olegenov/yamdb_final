@@ -26,13 +26,12 @@ services:
       - nginx_conf:/code/nginx
     entrypoint: /code/entrypoint.sh
   nginx:
-    image: nginx:1.19.0-alpine
+    build: ./nginx
     ports:
       - "127.0.0.1:8080:80"
     volumes:
       - media:/code/media
       - static:/code/static
-      - "./build:/usr/share/nginx/html:ro"
     depends_on:
       - django
     restart: always
