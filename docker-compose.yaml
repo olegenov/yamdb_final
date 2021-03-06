@@ -31,6 +31,7 @@ services:
     volumes:
       - media:/code/media
       - static:/code/static
+      - ./src:/usr/share/nginx/html
     depends_on:
       - django
     restart: always
