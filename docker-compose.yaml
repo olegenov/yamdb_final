@@ -27,6 +27,7 @@ services:
       - static:/code/static
     entrypoint: /code/entrypoint.sh
   nginx:
+    build: ./nginx
     image: nginx:latest
     ports:
       - "80:80"
