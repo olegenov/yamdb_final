@@ -13,7 +13,8 @@ services:
     env_file:
       - ./.env
   django:
-    build: nginx/
+    build: .
+    image: olegenov/yamdb:latest
     ports:
       - "8000:8000"
     depends_on:
@@ -26,7 +27,7 @@ services:
       - static:/code/static
     entrypoint: /code/entrypoint.sh
   nginx:
-    image: nginx:latest
+    build: nginx/
     ports:
       - "80:80"
     volumes:
