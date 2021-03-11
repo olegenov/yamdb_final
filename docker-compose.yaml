@@ -4,7 +4,6 @@ volumes:
   postgres_data:
   static:
   media:
-  nginx_conf:
 
 services:
   db:
@@ -14,8 +13,7 @@ services:
     env_file:
       - ./.env
   django:
-    build: .
-    image: olegenov/yamdb:latest
+    build: ngix/
     ports:
       - "8000:8000"
     depends_on:
@@ -26,7 +24,6 @@ services:
     volumes:
       - media:/code/media
       - static:/code/static
-      - nginx_conf:/code/nginx/
     entrypoint: /code/entrypoint.sh
   nginx:
     image: nginx:latest
@@ -35,7 +32,6 @@ services:
     volumes:
       - media:/code/media
       - static:/code/static
-      - nginx_conf:/etc/nginx/conf.d/
     depends_on:
       - django
     restart: always
